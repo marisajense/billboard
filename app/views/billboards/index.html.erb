@@ -1,0 +1,16 @@
+<h1 class="center">Billboards</h1>
+<div class="center">
+<%= link_to 'Add Billboard', new_billboard_path, class: "btn black white-text" %>
+</div>
+<hr />
+<ul class="collection">
+  <% @billboards.each do |billboard| %>
+    <li class="collection-item">
+      <%= link_to billboard.name, billboard_path(billboard) %>
+      <br />
+      <%= link_to 'Edit', edit_billboard_path(billboard) %> -
+      <%= link_to 'Delete', billboard_path(billboard), method: :delete, data:
+      {confirm: 'Are you sure you want to delete this billboard?'} %>
+    </li>
+  <% end %>
+</ul>
